@@ -1,23 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
+import Addtask from './components/Addtask';
+import { useState } from 'react';
+import Listtask from './components/Listtask';
 
 function App() {
+  const [ uploadTaskStatus , setUploadTaskStatus] = useState({});
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='d-grid justify-content-center align-items-center'>
+      <Addtask setUploadTaskStatus={setUploadTaskStatus} />
+      <Listtask  uploadTaskStatus={uploadTaskStatus}/>
     </div>
   );
 }
